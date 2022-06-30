@@ -30,6 +30,17 @@ export const divProduct = styled.div`
     margin-right: 0.5rem;
   }
 
+  @media screen and (max-width: 800px) {
+    margin-left: 0;
+    margin-right: 0;
+
+    button {
+      display: none;
+    }
+    .icon-voltar {
+      display: none;
+    }
+  }
  
 `;
 
@@ -38,6 +49,7 @@ export const mainProduct = styled.main`
   margin-left: 3rem;
   margin-top: 2rem;
   font-family: 'Lato', sans-serif;
+  padding-bottom: 3rem;
 
   section {
     padding-top: 1.5rem;
@@ -83,6 +95,7 @@ export const mainProduct = styled.main`
     color: #888888;
     font-size: 1rem;
     line-height: 1.875rem;
+    text-transform: uppercase;
   }
 
   h4 {
@@ -129,5 +142,29 @@ export const mainProduct = styled.main`
     display: flex;
     align-items: center;
   }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 23rem;
+    margin-left: 0;
+    padding: 1rem;
+    padding-bottom: 3rem;
+
+    .format-button {
+      display: none;
+      width: 0;
+    }
+
+    .div-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+  }
+
 
 `;

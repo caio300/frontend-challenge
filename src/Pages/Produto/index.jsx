@@ -29,10 +29,10 @@ export default function() {
               Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.
             </article>
             <div className='div-button'>
-              <button><Minus /></button>
-              <span>0</span>
-              <button><Plus /></button>
-              <span className='adicionar'>Adicionar</span>
+              <button className='format-button'><Minus className='format-button'/></button>
+              <span className='format-button'>0</span>
+              <button className='format-button'><Plus className='format-button'/></button>
+              <button className='adicionar'>Adicionar</button>
             </div>
           </section>
         </pageProduct.mainProduct>
