@@ -29,7 +29,7 @@ export const divCard = styled.div`
   flex-direction: column;
   align-items: center;
   background: #FFFFFF;
-  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
   margin-bottom: 1rem;
 
