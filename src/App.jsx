@@ -1,9 +1,13 @@
+import { Route, Switch } from "react-router-dom"
+import Loja from "./Pages/Loja";
 
 function App() {
 
   return (
-    <h1>Iniciando projeto</h1>
+   <Switch>
+      <Route path='/' component={Loja}/>
+   </Switch>
   )
-}
+};
 
-export default App
+export default App;
