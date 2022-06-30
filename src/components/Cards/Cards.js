@@ -12,7 +12,6 @@ export const divCardButton = styled.div`
     color: #FFFFFF;
     height: 2.46rem;
     font-family: 'Lato', sans-serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 0.87rem;
     line-height: 1rem;
@@ -114,7 +113,7 @@ export const divSocio = styled.div`
   }
 
   span {
-    color: #B6116E;
+    color: #B6116E !important;
   }
 `;
 

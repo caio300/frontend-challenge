@@ -5,7 +5,17 @@ export default function() {
   return (
     <Catalogo.Products>
       <span>49 produtos encontrados</span>
-      <Cards/>
+      <Catalogo.Product>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+      </Catalogo.Product>
     </Catalogo.Products>
   )
 }
