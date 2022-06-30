@@ -127,7 +127,9 @@ export const divDesconto = styled.div`
     span {
       display: flex;
       align-items: center;
-      padding: 0.2rem;
+      line-height: 1rem;
+      font-weight: 400;
+      margin-bottom: 0;
     }
 
   }
