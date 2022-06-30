@@ -50,6 +50,27 @@ export const HeaderStyled = styled.header`
   menu button span {
     background: #FFFFFF;
   }
+
+  @media screen and (max-width: 800px) {
+    max-width: 50rem;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+
+    nav {
+      display:none;
+    }
+
+    .button-conta {
+      display: none;
+    }
+
+    menu  {
+      width: 10rem;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+  }
+
 `;
 
 export const ButtonCarrinho = styled.button`

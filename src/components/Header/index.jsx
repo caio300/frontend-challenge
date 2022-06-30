@@ -23,8 +23,8 @@ export default function () {
         <button>
           <img src={Busca} alt="Buscar" />
         </button>
-        <button>
-          <img src={conta} alt="Sua conta" />
+        <button className='button-conta'>
+          <img className='button-conta' src={conta} alt="Sua conta" />
         </button>
         <Header.ButtonCarrinho>
           <img src={winebox} alt="Carrinho de compra" />

@@ -5,6 +5,7 @@ export default function() {
   return (
     <Catalogo.Products>
       <span>49 produtos encontrados</span>
+      <hr />
       <Catalogo.Product>
         <Cards/>
         <Cards/>

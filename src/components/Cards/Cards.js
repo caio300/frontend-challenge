@@ -20,6 +20,10 @@ export const divCardButton = styled.div`
     cursor: pointer;
   }
 
+  @media screen and (max-width: 800px) {
+    width: 9.75rem;
+  }
+
 `;
 
 export const divCard = styled.div`
@@ -43,6 +47,17 @@ export const divCard = styled.div`
     text-align: center;
     margin-top: 0.48rem;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 9.75rem;
+
+    h3 {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      height: 3rem;
+      width: 8.75rem;
+    }
+  }
 `;
 
 export const imgVinho = styled.div`
@@ -53,6 +68,7 @@ export const imgVinho = styled.div`
     align-self: center;
     height: 11rem;
   }
+
 `;
 
 export const imgFlag = styled.div`
@@ -63,6 +79,14 @@ export const imgFlag = styled.div`
     position: absolute;
     bottom: 0.7rem;
     left: 3rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    img {
+      height: 2rem;
+      position: absolute;
+      left: -4rem;
+    }
   }
 `;
 
@@ -91,6 +115,22 @@ export const divDesconto = styled.div`
     text-align: center;
     margin-left: 0.33rem;
   }
+
+  @media screen and (max-width: 800px) {
+    height: 2rem;
+    
+
+    p {
+      font-weight: 400;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      padding: 0.2rem;
+    }
+
+  }
 `;
 
 export const divSocio = styled.div`
@@ -104,6 +144,7 @@ export const divSocio = styled.div`
     font-weight: 700;
     line-height: 0.625rem;
     margin-right: 0.425rem;
+    text-transform: uppercase;
   }
 
   p {
@@ -114,6 +155,16 @@ export const divSocio = styled.div`
 
   span {
     color: #B6116E !important;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin-top: 0;
+
+    h4 {
+      color: #555555;
+      font-weight: 300;
+      font-size: 0.625rem;
+    }
   }
 `;
 
@@ -130,6 +181,7 @@ export const divNaoSocio = styled.div`
     font-size: 0.75rem;
     line-height: 0.875rem;
     margin-right: 0.425rem;
+    text-transform: uppercase;
   }
 
   span {
@@ -138,5 +190,22 @@ export const divNaoSocio = styled.div`
     font-size: 0.75rem;
     font-weight: 700;
     line-height: 0.875rem;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 800px) {
+    
+    span {
+      margin-bottom: 0;
+      font-size: 0.625rem;
+      font-weight: 400;
+      line-height: 1rem;
+    }
+
+    p {
+      font-size: 0.625rem;
+      font-weight: 400;
+      line-height: 1rem;
+    }
   }
 `;

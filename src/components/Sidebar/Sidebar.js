@@ -35,4 +35,9 @@ export const filterSidebar = styled.aside`
   input {
     margin-right: 0.857rem;
   }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+    
 `;
