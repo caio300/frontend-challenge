@@ -1,27 +1,28 @@
 import * as StyleCard from './Cards';
 
-export default function() {
+
+export default function({wine}) {
   return (
     <StyleCard.divCardButton>
       <StyleCard.divCard>
         <StyleCard.imgVinho>
-          <img src="https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png" alt="Imagem do produto" />
+          <img src={wine.image} alt="Imagem do produto" />
           <StyleCard.imgFlag>
-            <img src="https://img.wine.com.br/fenix/image/flags/rounded/portugal.svg" alt="Flag" />
+            <img src={wine.flag} alt="Flag" />
           </StyleCard.imgFlag>
         </StyleCard.imgVinho>
-        <h3>Bacalhôa Quinta da Garrida Colheita Selecionada 2015</h3>
+        <h3>{wine.name}</h3>
         <StyleCard.divDesconto>
-          <p>R$ 175,90</p>
-          <span>60% OFF</span>
+          <p>{wine.price.toLocaleString('pt-br', {maximumFrationDigits: 2})}</p>
+          <span>{wine.discount}% OFF</span>
         </StyleCard.divDesconto>
         <StyleCard.divSocio>
           <h4>SÓCIO WINE</h4>
-          <p>R$ <span>30</span>,00</p>
+          <p>R$ <span>{wine.priceMember.toLocaleString('pt-br', {maximumFrationDigits: 2})}</span></p>
         </StyleCard.divSocio>
         <StyleCard.divNaoSocio>
           <p>NÃO SÓCIO</p>
-          <span>R$ 37,40</span>
+          <span>R$ {wine.priceNonMember.toLocaleString('pt-br', {maximumFrationDigits: 2})}</span>
         </StyleCard.divNaoSocio>
       </StyleCard.divCard>
       <button>ADICONAR</button>
