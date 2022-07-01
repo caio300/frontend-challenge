@@ -126,6 +126,7 @@ export const divDesconto = styled.div`
     }
 
     span {
+      height: 1rem;
       display: flex;
       align-items: center;
       line-height: 1rem;
@@ -138,10 +139,10 @@ export const divDesconto = styled.div`
 
 export const divSocio = styled.div`
   display: flex;
-  align-items: center;
   font-family: 'Lato', sans-serif;
   font-size: 0.68rem;
   margin-top: 0.3rem;
+
 
   h4 {
     font-weight: 700;
@@ -161,12 +162,22 @@ export const divSocio = styled.div`
   }
 
   @media screen and (max-width: 800px) {
+    display: flex;
     margin-top: 0;
+    weight: 1rem;
+    height: 1.5rem;
 
     h4 {
+      text-align: center;
+      width: 2rem;
       color: #555555;
       font-weight: 300;
       font-size: 0.625rem;
+    }
+
+    p {
+      text-align: center;
+      height: 100%;
     }
   }
 `;
@@ -197,7 +208,8 @@ export const divNaoSocio = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    
+    margin-top: 0.5rem;
+
     span {
       margin-bottom: 0;
       font-size: 0.625rem;
@@ -209,6 +221,7 @@ export const divNaoSocio = styled.div`
       font-size: 0.625rem;
       font-weight: 400;
       line-height: 1rem;
+      margin-bottom: 0;
     }
   }
 `;

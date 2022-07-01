@@ -12,11 +12,11 @@ export default function () {
       <img src={logoWine} alt="Logo Wine" />
       
       <nav>
-        <Link>Clube</Link>
-        <Link>Loja</Link>
-        <Link>Produtores</Link>
-        <Link>Ofertas</Link>
-        <Link>Eventos</Link>
+        <Link to='#'>Clube</Link>
+        <Link to='/'>Loja</Link>
+        <Link to='#'>Produtores</Link>
+        <Link to='#'>Ofertas</Link>
+        <Link to='#'>Eventos</Link>
       </nav>
 
       <menu>

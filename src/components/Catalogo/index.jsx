@@ -4,11 +4,12 @@ import Cards from '../Cards';
 import * as Catalogo from './Catalogo';
 
 export default function() {
+  const { totalItems } = useContext(productsWine);
   const { wines } = useContext(productsWine);
 
   return (
     <Catalogo.Products>
-      <span>49 produtos encontrados</span>
+      <p><span>{totalItems}</span>produtos encontrados</p>
       <hr />
       <Catalogo.Product>
         {wines &&  wines.map((wine) => <Cards key={wine.id} wine={wine} />)}

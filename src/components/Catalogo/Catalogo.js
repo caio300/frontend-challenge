@@ -11,6 +11,10 @@ export const Products = styled.section`
   }
 
   span {
+    margin-right: 0.5rem;
+  }
+
+  p {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 1.125rem;
@@ -20,7 +24,7 @@ export const Products = styled.section`
 
   @media screen and (max-width: 800px) {
 
-    span {
+    p {
       color: #888888;
       margin-bottom: 1.25rem;
     }
@@ -29,6 +33,7 @@ export const Products = styled.section`
       color: #262626;
       border: 1px solid #888888;
     }
+
   }
 `;
 

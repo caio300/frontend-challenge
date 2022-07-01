@@ -30,6 +30,7 @@ export const filterSidebar = styled.aside`
   label {
     color: #1D1D1B;
     font-family: 'Lato', sans-serif;
+    cursor: pointer;
   }
 
   input {
