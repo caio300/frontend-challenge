@@ -1,12 +1,8 @@
 import styled from "styled-components";
-
-
 export const divCardButton = styled.div`
   width: 16rem;
   display: flex;
   flex-direction: column;
-
-
   button {
     background: #7EBC43;
     color: #FFFFFF;
@@ -19,13 +15,10 @@ export const divCardButton = styled.div`
     border-radius: 4px;
     cursor: pointer;
   }
-
   @media screen and (max-width: 800px) {
     width: 9.75rem;
   }
-
 `;
-
 export const divCard = styled.div`
   width: 16rem;
   height: 20.9rem;
@@ -37,7 +30,6 @@ export const divCard = styled.div`
   margin-top: 2rem;
   margin-bottom: 1rem;
   cursor: pointer;
-
   h3 {
     height: 2.7rem;
     width: 14.5rem;
@@ -48,10 +40,8 @@ export const divCard = styled.div`
     text-align: center;
     margin-top: 0.48rem;
   }
-
   @media screen and (max-width: 800px) {
     width: 9.75rem;
-
     h3 {
       font-size: 0.875rem;
       line-height: 1rem;
@@ -60,7 +50,6 @@ export const divCard = styled.div`
     }
   }
 `;
-
 export const imgVinho = styled.div`
   display: flex;
   align-items: flex-end;
@@ -69,19 +58,15 @@ export const imgVinho = styled.div`
     align-self: center;
     height: 11rem;
   }
-
 `;
-
 export const imgFlag = styled.div`
   position: absolute;
-  
   img {
     height: 2.43rem;
     position: absolute;
     bottom: 0.7rem;
     left: 3rem;
   }
-
   @media screen and (max-width: 800px) {
     img {
       height: 2rem;
@@ -90,12 +75,10 @@ export const imgFlag = styled.div`
     }
   }
 `;
-
 export const divDesconto = styled.div`
   display: flex;
   font-family: 'Lato', sans-serif;
   margin-top: 0.33rem;
-
   p {
     color: #888888;
     font-weight: 700;
@@ -103,7 +86,6 @@ export const divDesconto = styled.div`
     line-height: 1rem;
     text-decoration: line-through;
   }
-
   span {
     display: flex;
     padding: 0.1rem 0.3rem 0.1rem 0.3rem;
@@ -116,79 +98,54 @@ export const divDesconto = styled.div`
     text-align: center;
     margin-left: 0.33rem;
   }
-
   @media screen and (max-width: 800px) {
     height: 2rem;
-    
-
     p {
       font-weight: 400;
     }
-
     span {
-      height: 1rem;
       display: flex;
       align-items: center;
       line-height: 1rem;
       font-weight: 400;
       margin-bottom: 0;
     }
-
   }
 `;
-
 export const divSocio = styled.div`
   display: flex;
+  align-items: center;
   font-family: 'Lato', sans-serif;
   font-size: 0.68rem;
   margin-top: 0.3rem;
-
-
   h4 {
     font-weight: 700;
     line-height: 0.625rem;
     margin-right: 0.425rem;
     text-transform: uppercase;
   }
-
   p {
     color: #B6116E;
     font-weight: 700;
     line-height: 1.68rem;
   }
-
   span {
     color: #B6116E !important;
   }
-
   @media screen and (max-width: 800px) {
-    display: flex;
     margin-top: 0;
-    weight: 1rem;
-    height: 1.5rem;
-
     h4 {
-      text-align: center;
-      width: 2rem;
       color: #555555;
       font-weight: 300;
       font-size: 0.625rem;
     }
-
-    p {
-      text-align: center;
-      height: 100%;
-    }
   }
 `;
-
 export const divNaoSocio = styled.div`
   display: flex;
   align-items: center;
   font-family: 'Lato', sans-serif;
   margin-top: 0.3rem;
-  
-
   p {
     color: #888888;
     font-weight: 700;
@@ -197,7 +154,6 @@ export const divNaoSocio = styled.div`
     margin-right: 0.425rem;
     text-transform: uppercase;
   }
-
   span {
     color: #888888;
     font-family: 'Lato', sans-serif;
@@ -206,22 +162,17 @@ export const divNaoSocio = styled.div`
     line-height: 0.875rem;
     text-transform: uppercase;
   }
-
   @media screen and (max-width: 800px) {
-    margin-top: 0.5rem;
-
     span {
       margin-bottom: 0;
       font-size: 0.625rem;
       font-weight: 400;
       line-height: 1rem;
     }
-
     p {
       font-size: 0.625rem;
       font-weight: 400;
       line-height: 1rem;
-      margin-bottom: 0;
     }
   }
 `;

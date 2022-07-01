@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const HeaderStyled = styled.header`
   background: #FFFFFF;
   display: flex;
@@ -7,14 +6,12 @@ export const HeaderStyled = styled.header`
   justify-content: space-around;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 4.1rem;
-
   nav {
     width: 30rem;
     height: 5.5rem;
     display: flex;
     justify-content: space-between;
   }
-
   a {
     display: flex;
     align-items: center;
@@ -25,20 +22,17 @@ export const HeaderStyled = styled.header`
     text-decoration: none;
     height: 100%;
   }
-
   a:hover {
     color: #D14B8F;
     transition: color 0.2s;
     border-bottom: 2px solid #D14B8F;
   }
-
   menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 15.75rem;
   }
-
   menu button{
     background: transparent;
     border: none;
@@ -46,33 +40,26 @@ export const HeaderStyled = styled.header`
     height: 3.5rem;
     cursor: pointer;
   }
-
   menu button span {
     background: #FFFFFF;
   }
-
   @media screen and (max-width: 800px) {
     max-width: 50rem;
     padding: 0.5rem;
     margin-bottom: 2rem;
-
     nav {
       display:none;
     }
-
     .button-conta {
       display: none;
     }
-
     menu  {
       width: 10rem;
       gap: 0.5rem;
       justify-content: flex-end;
     }
   }
-
 `;
-
 export const ButtonCarrinho = styled.button`
   span {
     display: flex;
