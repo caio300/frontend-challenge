@@ -36,6 +36,7 @@ export const divCard = styled.div`
   box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 
   h3 {
     height: 2.7rem;

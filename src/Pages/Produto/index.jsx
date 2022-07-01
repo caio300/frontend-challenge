@@ -1,26 +1,46 @@
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Header from '../../components/Header';
-import { Plus, Minus, CaretLeft, Star } from 'phosphor-react';
+import productsWine from '../../components/context/Context';
+import { Plus, Minus, CaretLeft, Star, CaretRight } from 'phosphor-react';
 import * as pageProduct from './ProdutoPage';
+import axios from 'axios';
 
 
 export default function() {
+  const [ wine, setWine ] = useState({});
+  const { infoWine, wines } = useContext(productsWine);
+  const params = useParams('/produto/:page/:id');
+  const { id } = params;
+  const findWine = wines.find((wine) => wine.id === Number(id));
+  setWine(findWine);
+  console.log(findWine);
+
+
+/*   const getProdutc = () => {
+    
+    
+  };
+
+  useEffect(() => {
+    getProdutc();
+  }, []);
+ */
+
   return (
     <pageProduct.containerPage>
       <Header />
       <pageProduct.divProduct>
         <button><CaretLeft className='icon-voltar'/>Voltar</button>
         <pageProduct.mainProduct>
-          <img src="https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png" alt="" />
+          <img src={infoWine.imgWine} alt="Foto do produto" />
           <section>
-            <span>Vinhos - Estados Unidos - Califónia</span>
-            <h2>Apothic Red 2019</h2>
+            <span className='region'>Vinhos <CaretRight /> Estados Unidos <CaretRight /> Califónia</span>
+            <h2>{infoWine.name}</h2>
             <div>
-              <img src="https://img.wine.com.br/fenix/image/flags/rounded/portugal.svg" alt="" />
-              <p>Estados Unidos Tinto Meio Seco/DemiSec 750 ml</p>
-              <Star color= '#F9B950' weight="fill"/>
-              <Star color= '#F9B950' weight="fill"/>
-              <Star color= '#F9B950' weight="fill"/>
-              <Star color= '#F9B950' weight="fill"/>
+              <img src={infoWine.imgFlag} alt="Imagem da bandeira do vinho" />
+              <p>{infoWine.country} {infoWine.type} {infoWine.classification} {infoWine.size} ml</p>
+              <Star color= '#F9B950' weight="fill"/><span>({infoWine.rating})</span>
             </div>
             <h3>R$<span>63</span>,67</h3>
             <p className='nao-socio'>NÃO SÓCIO r$ 120,95/UN</p>

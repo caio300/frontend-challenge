@@ -4,13 +4,16 @@ import productsWine from "./Context";
 
 
 const Provider = ({children}) => {
-  const [ wines, setWines ] = useState('');
-  
-  const fetchWines = async () => {
+  const [ wines, setWines ] = useState([]);
+  const [ page , setPage ] = useState(1);
+  const [infoWine, setInfoWine ] = useState({});
 
-    const response = await axios.get('https://wine-back-test.herokuapp.com/products?page=1&limit=10');
+  const fetchWines = async (params = 1) => {
+    const response = await axios.get(`https://wine-back-test.herokuapp.com/products?page=${params}&limit=10`);
+    setPage(response.data.page)
     setWines(response.data.items)
   };
+
 
   useEffect(() => {
     fetchWines();
@@ -19,6 +22,10 @@ const Provider = ({children}) => {
 
   const data = {
     wines,
+    infoWine,
+    setInfoWine,
+    page,
+    setPage,
   };
 
   return (

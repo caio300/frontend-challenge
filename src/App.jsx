@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-          <Route path='/produto' component={Produto} />
+          <Route path='/produto/:page/:id' component={Produto} />
           <Route path='/' component={Loja}/>
       </Switch>
    </BrowserRouter>

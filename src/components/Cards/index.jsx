@@ -1,10 +1,16 @@
+import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import productsWine from '../context/Context';
 import * as StyleCard from './Cards';
 
 
 export default function({wine}) {
+  const history = useHistory();
+  const { page } = useContext(productsWine);
+
   return (
     <StyleCard.divCardButton>
-      <StyleCard.divCard>
+      <StyleCard.divCard onClick={() =>  history.push(`/produto/${page}/${wine.id}`)}>
         <StyleCard.imgVinho>
           <img src={wine.image} alt="Imagem do produto" />
           <StyleCard.imgFlag>

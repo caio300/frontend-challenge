@@ -55,6 +55,10 @@ export const mainProduct = styled.main`
     padding-top: 1.5rem;
   }
 
+  .region {
+    display:flex
+  }
+
   h2 {
     font-weight: 700;
     font-size: 1.75rem;
