@@ -19,16 +19,16 @@ export default function({wine}) {
         </StyleCard.imgVinho>
         <h3>{wine.name}</h3>
         <StyleCard.divDesconto>
-          <p>{wine.price.toLocaleString('pt-br', {maximumFrationDigits: 2})}</p>
+          <p>{Number(wine.price).toLocaleString('pt-br',{minimumFractionDigits:2})}</p>
           <span>{wine.discount}% OFF</span>
         </StyleCard.divDesconto>
         <StyleCard.divSocio>
           <h4>SÓCIO WINE</h4>
-          <p>R$ <span>{wine.priceMember.toLocaleString('pt-br', {maximumFrationDigits: 2})}</span></p>
+          <p>R$ <span>{Number(wine.priceMember).toLocaleString('pt-br',{minimumFractionDigits:2})}</span></p>
         </StyleCard.divSocio>
         <StyleCard.divNaoSocio>
           <p>NÃO SÓCIO</p>
-          <span>R$ {wine.priceNonMember.toLocaleString('pt-br', {maximumFrationDigits: 2})}</span>
+          <span>R$ {Number(wine.priceNonMember).toLocaleString('pt-br',{minimumFractionDigits:2})}</span>
         </StyleCard.divNaoSocio>
       </StyleCard.divCard>
       <button>ADICONAR</button>

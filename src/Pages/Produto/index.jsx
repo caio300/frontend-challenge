@@ -8,24 +8,25 @@ import axios from 'axios';
 
 
 export default function() {
-  const [ wine, setWine ] = useState({});
-  const { infoWine, wines } = useContext(productsWine);
+  const [ infoWine, setInfoWine ] = useState({});
+  const { wines } = useContext(productsWine);
   const params = useParams('/produto/:page/:id');
   const { id } = params;
-  const findWine = wines.find((wine) => wine.id === Number(id));
-  setWine(findWine);
-  console.log(findWine);
-
-
-/*   const getProdutc = () => {
-    
-    
+  
+  const getProductWine = () => {
+    const findWine = wines.find((elem) => elem.id === Number(id));
+    setInfoWine(findWine);
   };
 
   useEffect(() => {
-    getProdutc();
-  }, []);
- */
+    getProductWine();
+  }, [wines]);
+
+  const createStar = () => {
+    const myArray = new Array(infoWine?.rating).fill('1');
+    const myStar = myArray.map((elem) => <Star color= '#F9B950' weight="fill"/>);
+    return myStar;
+  }
 
   return (
     <pageProduct.containerPage>
@@ -33,20 +34,20 @@ export default function() {
       <pageProduct.divProduct>
         <button><CaretLeft className='icon-voltar'/>Voltar</button>
         <pageProduct.mainProduct>
-          <img src={infoWine.imgWine} alt="Foto do produto" />
+          <img src={infoWine?.image} alt="Foto do produto" />
           <section>
             <span className='region'>Vinhos <CaretRight /> Estados Unidos <CaretRight /> Califónia</span>
-            <h2>{infoWine.name}</h2>
+            <h2>{infoWine?.name}</h2>
             <div>
-              <img src={infoWine.imgFlag} alt="Imagem da bandeira do vinho" />
-              <p>{infoWine.country} {infoWine.type} {infoWine.classification} {infoWine.size} ml</p>
-              <Star color= '#F9B950' weight="fill"/><span>({infoWine.rating})</span>
+              <img src={infoWine?.flag} alt="Imagem da bandeira do vinho" />
+              <p>{infoWine?.country} {infoWine?.type} {infoWine?.classification} {infoWine?.size} ml</p>
+              {createStar().map((elem, index) => <div key={index}>{elem}</div>)}<span className='rating'>({infoWine?.rating})</span>
             </div>
-            <h3>R$<span>63</span>,67</h3>
-            <p className='nao-socio'>NÃO SÓCIO r$ 120,95/UN</p>
+            <h3>R$ <span>{Number(infoWine?.price).toLocaleString('pt-br',{minimumFractionDigits:2})}</span></h3>
+            <p className='nao-socio'>NÃO SÓCIO r$ {Number(infoWine?.priceNonMember).toLocaleString('pt-br',{minimumFractionDigits:2})}/UN</p>
             <h4>Comentátrios</h4>
             <article>
-              Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.
+              {infoWine?.sommelierComment}
             </article>
             <div className='div-button'>
               <button className='format-button'><Minus className='format-button'/></button>
@@ -60,3 +61,6 @@ export default function() {
     </pageProduct.containerPage>
   )
 }
+
+
+{/* <Star color= '#F9B950' weight="fill"/> */}

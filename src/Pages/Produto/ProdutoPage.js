@@ -59,6 +59,10 @@ export const mainProduct = styled.main`
     display:flex
   }
 
+  .rating {
+    margin-left: 0.5rem;
+  }
+
   h2 {
     font-weight: 700;
     font-size: 1.75rem;

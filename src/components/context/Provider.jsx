@@ -6,7 +6,6 @@ import productsWine from "./Context";
 const Provider = ({children}) => {
   const [ wines, setWines ] = useState([]);
   const [ page , setPage ] = useState(1);
-  const [infoWine, setInfoWine ] = useState({});
 
   const fetchWines = async (params = 1) => {
     const response = await axios.get(`https://wine-back-test.herokuapp.com/products?page=${params}&limit=10`);
@@ -22,8 +21,6 @@ const Provider = ({children}) => {
 
   const data = {
     wines,
-    infoWine,
-    setInfoWine,
     page,
     setPage,
   };
