@@ -3,6 +3,20 @@ export const Products = styled.section`
   display: flex;
   flex-direction: column;
   padding-bottom: 3rem;
+  
+  .div-input-search {
+    width: 20rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .div-input-search input {
+    padding-left: 0.5rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #D14B8F;
+    border-radius: 4px;
+  }
+
   h1 {
     margin-top: 2rem;
     margin-left: 2rem;

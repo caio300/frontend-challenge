@@ -8,6 +8,7 @@ const Provider = ({children}) => {
   const [ filterPrice, setFilterPrice ] = useState(false);
   const [ page , setPage ] = useState(1);
   const [ totalItems, setTotalItems ] = useState('');
+  const [searchInput, setSearchInput ] = useState(false);
   
 
   const fetchWines = async (params = 1) => {
@@ -17,10 +18,16 @@ const Provider = ({children}) => {
     setTotalItems(response.data.totalItems);
   };
 
+  const fetchAllProduct = async () => {
+    const response = await axios.get('https://wine-back-test.herokuapp.com/products');
+    const items = response.data.items;
+    return items;
+  };
 
   useEffect(() => {
     fetchWines();
   }, []);
+
 
   const data = {
     wines,
@@ -30,7 +37,10 @@ const Provider = ({children}) => {
     totalItems,
     fetchWines,
     filterPrice,
-    setFilterPrice
+    setFilterPrice,
+    searchInput,
+    setSearchInput,
+    fetchAllProduct,
   };
 
   return (
