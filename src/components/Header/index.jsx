@@ -4,16 +4,19 @@ import logoWine from '../../Imagens/black.png';
 import Busca from '../../Imagens/Busca.png';
 import conta from '../../Imagens/conta.png';
 import winebox from '../../Imagens/winebox.png';
+import { useContext } from 'react';
+import productsWine from '../context/Context.jsx';
 
 
 export default function () {
+  const { fetchWines } = useContext(productsWine);
   return (
     <Header.HeaderStyled>
       <img src={logoWine} alt="Logo Wine" />
       
       <nav>
         <Link to='#'>Clube</Link>
-        <Link to='/'>Loja</Link>
+        <Link to='/' onClick={() => fetchWines()}>Loja</Link>
         <Link to='#'>Produtores</Link>
         <Link to='#'>Ofertas</Link>
         <Link to='#'>Eventos</Link>

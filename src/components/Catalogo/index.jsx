@@ -11,9 +11,11 @@ export default function() {
     <Catalogo.Products>
       <p><span>{totalItems}</span>produtos encontrados</p>
       <hr />
+      {wines.length === 0 ? <h1>Não há produtos</h1> : 
       <Catalogo.Product>
         {wines &&  wines.map((wine) => <Cards key={wine.id} wine={wine} />)}
       </Catalogo.Product>
+      }
     </Catalogo.Products>
   )
 }

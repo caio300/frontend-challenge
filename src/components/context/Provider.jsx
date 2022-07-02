@@ -7,6 +7,7 @@ const Provider = ({children}) => {
   const [ wines, setWines ] = useState([]);
   const [ page , setPage ] = useState(1);
   const [ totalItems, setTotalItems ] = useState('');
+  
 
   const fetchWines = async (params = 1) => {
     const response = await axios.get(`https://wine-back-test.herokuapp.com/products?page=${params}&limit=9`);
@@ -20,12 +21,13 @@ const Provider = ({children}) => {
     fetchWines();
   }, []);
 
-
   const data = {
     wines,
+    setWines,
     page,
     setPage,
     totalItems,
+    fetchWines,
   };
 
   return (

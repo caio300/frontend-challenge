@@ -34,4 +34,5 @@ export default function({wine}) {
       <button>ADICONAR</button>
     </StyleCard.divCardButton>
   )
+     
 }
