@@ -1,15 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as Header from './Header.js';
 import logoWine from '../../Imagens/black.png';
 import Busca from '../../Imagens/Busca.png';
 import conta from '../../Imagens/conta.png';
 import winebox from '../../Imagens/winebox.png';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import productsWine from '../context/Context.jsx';
 
 
 export default function () {
-  const { fetchWines, searchInput, setSearchInput } = useContext(productsWine);
+  const { fetchWines, searchInput, setSearchInput, shoppingCart } = useContext(productsWine);
+  const history = useHistory();
+
 
   return (
     <Header.HeaderStyled>
@@ -29,9 +31,9 @@ export default function () {
         <button className='button-conta'>
           <img className='button-conta' src={conta} alt="Sua conta" />
         </button>
-        <Header.ButtonCarrinho>
+        <Header.ButtonCarrinho onClick={() => history.push('/carrinho')}>
           <img src={winebox} alt="Carrinho de compra" />
-          <span>0</span>
+          <span>{shoppingCart}</span>
         </Header.ButtonCarrinho>
       </menu>
     </Header.HeaderStyled>

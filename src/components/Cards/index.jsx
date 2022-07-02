@@ -6,7 +6,18 @@ import * as StyleCard from './Cards';
 
 export default function({wine}) {
   const history = useHistory();
-  const { page } = useContext(productsWine);
+  const { page, setShoppingCart, shoppingCart } = useContext(productsWine);
+
+  const handleClick = () => {
+    const myItems = JSON.parse(localStorage.getItem("carrinho"));
+    if (myItems) {
+      localStorage.setItem('carrinho', JSON.stringify([...myItems, wine]));
+      setShoppingCart(shoppingCart+1);
+    } else {
+        localStorage.setItem('carrinho', JSON.stringify([wine]));
+        setShoppingCart(shoppingCart+1);
+    }
+  }
 
   return (
     <StyleCard.divCardButton>
@@ -31,7 +42,7 @@ export default function({wine}) {
           <span>R$ {Number(wine.priceNonMember).toLocaleString('pt-br',{minimumFractionDigits:2})}</span>
         </StyleCard.divNaoSocio>
       </StyleCard.divCard>
-      <button>ADICONAR</button>
+      <button onClick={() => handleClick()}>ADICONAR</button>
     </StyleCard.divCardButton>
   )
      
