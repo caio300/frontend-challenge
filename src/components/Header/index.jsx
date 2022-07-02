@@ -12,7 +12,6 @@ export default function () {
   const { fetchWines, searchInput, setSearchInput, shoppingCart } = useContext(productsWine);
   const history = useHistory();
 
-
   return (
     <Header.HeaderStyled>
       <img src={logoWine} alt="Logo Wine" />

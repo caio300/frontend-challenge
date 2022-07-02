@@ -11,6 +11,7 @@ const Provider = ({children}) => {
   const [ searchInput, setSearchInput ] = useState(false);
   const [ backPage, setBackPage ] = useState(false);
   const [ shoppingCart, setShoppingCart ] = useState(0);
+  const [ cart, setCart ] = useState([]);
   
 
   const fetchWines = async (params = 1) => {
@@ -46,7 +47,9 @@ const Provider = ({children}) => {
     backPage,
     setBackPage,
     shoppingCart,
-    setShoppingCart
+    setShoppingCart,
+    cart,
+    setCart
   };
 
   return (

@@ -12,7 +12,9 @@ export default function({wine}) {
     const myItems = JSON.parse(localStorage.getItem("carrinho"));
     if (myItems) {
       localStorage.setItem('carrinho', JSON.stringify([...myItems, wine]));
-      setShoppingCart(shoppingCart+1);
+      const totalitems = JSON.parse(localStorage.getItem("carrinho"));
+      console.log(totalitems.length);
+      setShoppingCart(totalitems.length);
     } else {
         localStorage.setItem('carrinho', JSON.stringify([wine]));
         setShoppingCart(shoppingCart+1);
