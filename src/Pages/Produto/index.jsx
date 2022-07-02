@@ -33,7 +33,7 @@ export default function() {
     <pageProduct.containerPage>
       <Header />
       <pageProduct.divProduct>
-        <button onClick={() => history.push('/')}><CaretLeft className='icon-voltar'/>Voltar</button>
+        <button onClick={() =>{ history.push('/')}}><CaretLeft className='icon-voltar'/>Voltar</button>
         <pageProduct.mainProduct>
           <img src={infoWine?.image} alt="Foto do produto" />
           <section>

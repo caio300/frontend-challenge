@@ -3,6 +3,12 @@ export const Products = styled.section`
   display: flex;
   flex-direction: column;
   padding-bottom: 3rem;
+  h1 {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-family: 'Lato', sans-serif;
+    color: #DEDEDE;
+  }
   hr {
     color: #DEDEDE;
     border: none

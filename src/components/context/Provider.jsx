@@ -5,6 +5,7 @@ import productsWine from "./Context";
 
 const Provider = ({children}) => {
   const [ wines, setWines ] = useState([]);
+  const [ filterPrice, setFilterPrice ] = useState(false);
   const [ page , setPage ] = useState(1);
   const [ totalItems, setTotalItems ] = useState('');
   
@@ -28,6 +29,8 @@ const Provider = ({children}) => {
     setPage,
     totalItems,
     fetchWines,
+    filterPrice,
+    setFilterPrice
   };
 
   return (

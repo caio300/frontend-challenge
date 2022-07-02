@@ -4,8 +4,8 @@ import productsWine from '../context/Context';
 import * as Sidebar from './Sidebar';
 
 export default function () {
-  const { setWines } = useContext(productsWine);
-  const [ filterPrice, setFilterPrice ] = useState('');
+  const { setWines, filterPrice, setFilterPrice } = useContext(productsWine);
+
 
   const fetchPrice = async () => {
     const response = await axios.get('https://wine-back-test.herokuapp.com/products');
