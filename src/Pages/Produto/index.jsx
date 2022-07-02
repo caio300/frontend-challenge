@@ -4,12 +4,10 @@ import Header from '../../components/Header';
 import productsWine from '../../components/context/Context';
 import { Plus, Minus, CaretLeft, Star, CaretRight } from 'phosphor-react';
 import * as pageProduct from './ProdutoPage';
-import axios from 'axios';
-
 
 export default function() {
   const [ infoWine, setInfoWine ] = useState({});
-  const { wines } = useContext(productsWine);
+  const { wines, backPage, setBackPage } = useContext(productsWine);
   const params = useParams('/produto/:page/:id');
   const history = useHistory();
   const { id } = params;
@@ -33,7 +31,7 @@ export default function() {
     <pageProduct.containerPage>
       <Header />
       <pageProduct.divProduct>
-        <button onClick={() =>{ history.push('/')}}><CaretLeft className='icon-voltar'/>Voltar</button>
+        <button onClick={() =>{ history.push('/'), setBackPage(!backPage)}}><CaretLeft className='icon-voltar'/>Voltar</button>
         <pageProduct.mainProduct>
           <img src={infoWine?.image} alt="Foto do produto" />
           <section>

@@ -8,7 +8,8 @@ const Provider = ({children}) => {
   const [ filterPrice, setFilterPrice ] = useState(false);
   const [ page , setPage ] = useState(1);
   const [ totalItems, setTotalItems ] = useState('');
-  const [searchInput, setSearchInput ] = useState(false);
+  const [ searchInput, setSearchInput ] = useState(false);
+  const [ backPage, setBackPage ] = useState(false);
   
 
   const fetchWines = async (params = 1) => {
@@ -26,7 +27,7 @@ const Provider = ({children}) => {
 
   useEffect(() => {
     fetchWines();
-  }, []);
+  }, [backPage]);
 
 
   const data = {
@@ -41,6 +42,8 @@ const Provider = ({children}) => {
     searchInput,
     setSearchInput,
     fetchAllProduct,
+    backPage,
+    setBackPage,
   };
 
   return (
