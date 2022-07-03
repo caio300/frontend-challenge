@@ -20,7 +20,7 @@ export default function() {
     <>
       <Header />
       {cart ? cart.map((wine) => <ShoppingCard key={wine.id} wine={wine}/>) : <h2>Seu carrinho está vazio</h2>}
-      <div>R$ {cart && cart.reduce((acc, curr) => acc + curr.price, 0).toLocaleString('pt-br',{minimumFractionDigits:2})}</div>
+      <div>R$ {cart && cart.reduce((acc, curr) => acc + curr.price * curr.qtd, 0).toLocaleString('pt-br',{minimumFractionDigits:2})}</div>
     </>
   );
 }

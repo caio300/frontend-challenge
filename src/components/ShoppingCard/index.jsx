@@ -33,6 +33,9 @@ export default function({wine}) {
               <p>NÃO SÓCIO</p>
               <span>R$ {Number(wine.priceNonMember).toLocaleString('pt-br',{minimumFractionDigits:2})}</span>
             </div>
+            <div>
+              <span>{wine.qtd}</span>
+            </div>
           </div>
           <div>
             <button onClick={() => handleClick(wine.id)}>Excluir</button>

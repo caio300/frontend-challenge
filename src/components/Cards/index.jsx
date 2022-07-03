@@ -11,12 +11,27 @@ export default function({wine}) {
   const handleClick = () => {
     const myItems = JSON.parse(localStorage.getItem("carrinho"));
     if (myItems) {
-      localStorage.setItem('carrinho', JSON.stringify([...myItems, wine]));
+      const findItems = myItems.find((elem) => elem.id === wine.id);
+      if (findItems) {
+        const allItems = myItems.map((elem) => {
+          if(elem.id === findItems.id) {
+            if(elem.qtd) {
+              elem.qtd += 1;
+            } else {
+              elem.qtd = 1;
+            }
+          }
+          return elem
+        });
+        localStorage.setItem('carrinho', JSON.stringify(allItems));
+      } else {
+        localStorage.setItem('carrinho', JSON.stringify([...myItems, {...wine, qtd: 1}]));
+      }
       const totalitems = JSON.parse(localStorage.getItem("carrinho"));
-      console.log(totalitems.length);
       setShoppingCart(totalitems.length);
     } else {
-        localStorage.setItem('carrinho', JSON.stringify([wine]));
+        
+        localStorage.setItem('carrinho', JSON.stringify([{...wine, qtd: 1}]));
         setShoppingCart(shoppingCart+1);
     }
   }

@@ -6,6 +6,9 @@ export const HeaderStyled = styled.header`
   justify-content: space-around;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 4.1rem;
+  img {
+    cursor: pointer;
+  }
   nav {
     width: 30rem;
     height: 5.5rem;

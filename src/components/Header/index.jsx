@@ -14,7 +14,7 @@ export default function () {
 
   return (
     <Header.HeaderStyled>
-      <img src={logoWine} alt="Logo Wine" />
+      <img onClick={() => history.push('/')} src={logoWine} alt="Logo Wine" />
       
       <nav>
         <Link to='#'>Clube</Link>

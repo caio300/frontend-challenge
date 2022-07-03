@@ -23,7 +23,12 @@ export default function() {
 
   const filterWineName = async () => {
     const items = await fetchAllProduct();
-    const winesName = items.filter((wine) => wine.name.includes(searchNameProduct));
+    const winesName = items.filter((wine) => (
+      wine.name.includes(searchNameProduct) ||
+      wine.type.includes(searchNameProduct) ||
+      wine.classification.includes(searchNameProduct)
+    ));
+    console.log(winesName);
     setWines(winesName);
   };
 

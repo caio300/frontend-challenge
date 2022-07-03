@@ -7,7 +7,8 @@ import * as pageProduct from './ProdutoPage';
 
 export default function() {
   const [ infoWine, setInfoWine ] = useState({});
-  const { wines, backPage, setBackPage } = useContext(productsWine);
+  const [ qtdProduct, setQtdProduct] = useState(0);
+  const { wines, backPage, setBackPage, setShoppingCart, shoppingCart } = useContext(productsWine);
   const params = useParams('/produto/:page/:id');
   const history = useHistory();
   const { id } = params;
@@ -25,6 +26,34 @@ export default function() {
     const myArray = new Array(infoWine?.rating).fill('1');
     const myStar = myArray.map((elem) => <Star color= '#F9B950' weight="fill"/>);
     return myStar;
+  }
+
+  const handleClick = () => {
+    const myItems = JSON.parse(localStorage.getItem("carrinho"));
+    if (myItems) {
+      const findItems = myItems.find((elem) => elem.id === infoWine.id);
+      if (findItems) {
+        const allItems = myItems.map((elem) => {
+          if(elem.id === findItems.id) {
+            if(elem.qtd) {
+              elem.qtd += qtdProduct;
+            } else {
+              elem.qtd = qtdProduct;
+            }
+          }
+          return elem
+        });
+        localStorage.setItem('carrinho', JSON.stringify(allItems));
+      } else {
+        localStorage.setItem('carrinho', JSON.stringify([...myItems, {...infoWine, qtd: qtdProduct}]));
+      }
+      const totalitems = JSON.parse(localStorage.getItem("carrinho"));
+      setShoppingCart(totalitems.length);
+    } else {
+        
+        localStorage.setItem('carrinho', JSON.stringify([{...infoWine, qtd: qtdProduct}]));
+        setShoppingCart(shoppingCart+1);
+    }
   }
 
   return (
@@ -49,10 +78,10 @@ export default function() {
               {infoWine?.sommelierComment}
             </article>
             <div className='div-button'>
-              <button className='format-button'><Minus className='format-button'/></button>
-              <span className='format-button'>0</span>
-              <button className='format-button'><Plus className='format-button'/></button>
-              <button className='adicionar'>Adicionar</button>
+              <button onClick={() => setQtdProduct(qtdProduct > 0 ? qtdProduct-1 : 0 )} className='format-button'><Minus className='format-button'/></button>
+              <span className='format-button'>{qtdProduct}</span>
+              <button onClick={() => setQtdProduct(qtdProduct+1)} className='format-button'><Plus className='format-button'/></button>
+              <button onClick={() => handleClick()} className='adicionar'>Adicionar</button>
             </div>
           </section>
         </pageProduct.mainProduct>
