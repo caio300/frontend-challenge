@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import productsWine from '../context/Context';
 import * as Container from './ShoppingCard';
+import { Trash } from 'phosphor-react';
 
 
 export default function({wine}) {
@@ -19,26 +20,24 @@ export default function({wine}) {
     <>
       <Container.PageCarrinho>
         <Container.sectionCarrinho>
-          <img src={wine.image} alt="Imagem do produto" />
-          <img src={wine.flag} alt="Imagem da flag" />
           <div>
+            <img className={'img-flag'}src={wine.flag} alt="Imagem da flag" />
+            <img className={'img-product'} src={wine.image} alt="Imagem do produto" />
+          </div>
+          <div className={'div-info'}>
             <h3>{wine.name}</h3>
-            <p>R$ {Number(wine.price).toLocaleString('pt-br',{minimumFractionDigits:2})}</p>
-            <span>{wine.discount}% OFF</span>
-            <div>
+            <p className={'p-price'}>R$ <span>{Number(wine.price).toLocaleString('pt-br',{minimumFractionDigits:2})}</span></p>
+            <div className={'div-socio'}>
               <h4>SÓCIO WINE</h4>
+              <p className={'p-discount'}><span>{wine.discount}% OFF</span></p>
               <p>R$ <span>{Number(wine.priceMember).toLocaleString('pt-br',{minimumFractionDigits:2})}</span></p>
             </div>
-            <div>
-              <p>NÃO SÓCIO</p>
-              <span>R$ {Number(wine.priceNonMember).toLocaleString('pt-br',{minimumFractionDigits:2})}</span>
-            </div>
-            <div>
-              <span>{wine.qtd}</span>
+            <div className={'quantidade'}>
+              <p>Quantidade: <span>{wine.qtd}</span></p>
             </div>
           </div>
-          <div>
-            <button onClick={() => handleClick(wine.id)}>Excluir</button>
+          <div className={'excluir'}>
+            <Trash onClick={() => handleClick(wine.id)} size={25}/>
           </div>
         </Container.sectionCarrinho>
       </Container.PageCarrinho> 
