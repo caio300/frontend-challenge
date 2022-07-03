@@ -22,6 +22,7 @@ export default function() {
   };
 
   const printButton = (target) => {
+
     if(Number(target.innerText) === page) {
       target.className += ' selected-page';
     }
@@ -34,9 +35,9 @@ export default function() {
         <Sidebar />
         <Catalogo />
         <div>
-          <button onClick={({target}) => {changePage(target), printButton(target)}} className='button-1'>{page === 1 ? page : page - 1}</button>
-          <button onClick={({target}) => {changePage(target), printButton(target)}} className='button-2'>{page === 1 ? page + 1 :page}</button>
-          <button onClick={({target}) => {changePage(target), printButton(target)}} className='button-3'>{page === 1 ? page + 2 :page + 1}</button>
+          <button onClick={({target}) => changePage(target)} className={page === 1 ? "button-1 selected-page" : "button-1"}>{page === 1 ? page : page - 1}</button>
+          <button onClick={({target}) => changePage(target)} className={page !== 1 ? "button-2 selected-page" : "button-2"}>{page === 1 ? page + 1 :page}</button>
+          <button onClick={({target}) => changePage(target)} className="button-3">{page === 1 ? page + 2 :page + 1}</button>
           <span>...</span>
           <button onClick={() => setPage(page + 1)} className='button-next'>Próximo</button>
         </div>
