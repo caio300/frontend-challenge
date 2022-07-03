@@ -10,7 +10,7 @@ Neste projeto utilizei React.js e StyledComponentes.
 ## Instalação
 
 1. Clone o projeto
-  - `https://github.com/caio300/contador.git`
+  - `https://github.com/caio300/frontend-challenge.git`
   - Entre na pasta do projeto `/frontend-challenge`
 
 2. Instale as dependências
