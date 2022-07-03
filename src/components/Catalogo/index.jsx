@@ -11,6 +11,9 @@ export default function() {
     wines,
     setWines,
     fetchAllProduct,
+    fetchWines,
+    page,
+    setPage
   } = useContext(productsWine);
 
   const [searchNameProduct, setSearchNameProduct ] = useState('');
@@ -32,6 +35,19 @@ export default function() {
     setWines(winesName);
   };
 
+  useEffect(() => {
+    fetchWines();
+  }, []);
+
+  useEffect(() => {
+    fetchWines(page);
+  }, [page]);
+
+  const changePage = (target) => {
+    setPage(target.innerText);
+    
+  };
+
 
   return (
     <Catalogo.Products>
@@ -45,6 +61,13 @@ export default function() {
         {wines &&  wines.map((wine) => <Cards key={wine.id} wine={wine} />)}
       </Catalogo.Product>
       }
+      <div className='div-change-page'>
+        <button onClick={({target}) => changePage(target)} className={page === 1 ? "button-1 selected-page" : "button-1"}>{page === 1 ? page : page - 1}</button>
+        <button onClick={({target}) => changePage(target)} className={page !== 1 ? "button-2 selected-page" : "button-2"}>{page === 1 ? page + 1 :page}</button>
+        <button onClick={({target}) => changePage(target)} className="button-3">{page === 1 ? page + 2 :page + 1}</button>
+        <span>...</span>
+        <button onClick={() => setPage(page + 1)} className='button-next'>Próximo</button>
+      </div>
     </Catalogo.Products>
   )
 }

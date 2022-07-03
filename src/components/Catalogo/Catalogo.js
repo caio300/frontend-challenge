@@ -4,6 +4,54 @@ export const Products = styled.section`
   flex-direction: column;
   padding-bottom: 3rem;
   
+  .selected-page {
+    background: #B6116E !important;
+  }
+
+  .div-change-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+    gap: 1rem;
+  }
+
+  .div-change-page button {
+    border: 1px solid #B6116E;
+    background: #DEDEDE;
+    border-radius: 3px;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    cursor: pointer;
+  }
+
+  .button-1 {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+
+  .button-2 {
+    width: 4.56rem;
+    height: 2.375rem;
+  }
+
+  .button-3 {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+
+  .button-next {
+    border: none !important;
+    color: #B6116E;
+  }
+
+  .div-change-page span {
+    color: #B6116E !important;
+  }
+
   .div-input-search {
     width: 20rem;
     height: 2rem;

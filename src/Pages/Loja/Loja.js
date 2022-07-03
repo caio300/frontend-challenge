@@ -6,13 +6,6 @@ export const PageLoja = styled.main`
   margin-left: 20rem;
   margin-right: 10rem;
 
-  .selected-page {
-    background: orange;
-  }
-
-  .button-1 {
-
-  }
   
   @media screen and (max-width: 800px) {
     margin-left: 1.125rem;
