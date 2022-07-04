@@ -16,5 +16,5 @@ Neste projeto utilizei React.js e StyledComponentes.
 2. Instale as dependências
   - `npm install`
 
-3. Iniciel o projeto
+3. Iniciar o projeto
   - `npm run dev`
